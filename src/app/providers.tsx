@@ -73,9 +73,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 	return (
 		<ThemeProvider
 			disableTransitionOnChange
-			enableSystem
 			attribute='class'
-			defaultTheme='system'
+			defaultTheme='light'
 		>
 			<AppStoreProvider>
 				<QueryClientProvider client={queryClient}>
