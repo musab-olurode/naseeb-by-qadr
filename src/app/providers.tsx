@@ -11,7 +11,6 @@ import {
 	QueryClient,
 	QueryClientProvider,
 } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { AxiosError } from 'axios';
 import { toast } from 'sonner';
 
@@ -81,7 +80,6 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 			<AppStoreProvider>
 				<QueryClientProvider client={queryClient}>
 					{children}
-					{process.env.NODE_ENV !== 'production' && <ReactQueryDevtools />}
 				</QueryClientProvider>
 			</AppStoreProvider>
 		</ThemeProvider>

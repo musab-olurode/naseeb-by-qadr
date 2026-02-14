@@ -13,8 +13,8 @@
 	--input: hsl(214.3 31.8% 91.4%);
 	--card: hsl(0 0% 100%);
 	--card-foreground: hsl(222.2 47.4% 11.2%);
-	--primary: hsl(222.2 47.4% 11.2%);
-	--primary-foreground: hsl(210 40% 98%);
+	--primary: hsl(165 100% 20%);
+	--primary-foreground: hsl(44 43% 93%);
 	--secondary: hsl(210 40% 96.1%);
 	--secondary-foreground: hsl(222.2 47.4% 11.2%);
 	--accent: hsl(210 40% 96.1%);
@@ -79,7 +79,17 @@
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-sm: calc(var(--radius) - 4px);
 
-	--font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif,
+	--font-sans:
+		var(--font-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-aphrodite-slim-contextual:
+		var(--font-aphrodite-slim-contextual), ui-sans-serif, system-ui, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-arabic-typesetting:
+		var(--font-arabic-typesetting), ui-sans-serif, system-ui, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-louize-display:
+		var(--font-louize-display), ui-sans-serif, system-ui, sans-serif,
 		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
