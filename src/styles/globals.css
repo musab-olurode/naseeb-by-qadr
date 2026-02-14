@@ -112,3 +112,9 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+@layer utilities {
+	.bg-page-pattern {
+		background-image: url('/images/page-bg.png');
+	}
+}

@@ -136,7 +136,7 @@ export default function RootLayout({
 			<body
 				suppressHydrationWarning
 				className={cn(
-					'bg-primary-foreground min-h-screen bg-[url("/images/page-bg.png")] bg-cover bg-fixed bg-top bg-no-repeat font-sans antialiased',
+					'bg-primary-foreground bg-page-pattern min-h-screen bg-cover bg-fixed bg-top bg-no-repeat font-sans antialiased',
 					fontSans.variable,
 					fontAphroditeSlimContextual.variable,
 					fontArabicTypesetting.variable,
