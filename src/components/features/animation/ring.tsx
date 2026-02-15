@@ -1,0 +1,123 @@
+'use client';
+
+import React, { useMemo, useRef } from 'react';
+
+import useTailwindBreakpoints from '@/hooks/use-tailwind-breakpoints';
+
+import { EngagementRing } from '@/components/features/models/engagement-ring';
+
+import { Environment, PerspectiveCamera } from '@react-three/drei';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { MotionValue, useScroll, useTransform } from 'framer-motion';
+import * as motion from 'motion/react-client';
+import Image from 'next/image';
+
+function CameraController({
+	cameraPositionY,
+	cameraPositionZ,
+}: {
+	cameraPositionY: MotionValue<number>;
+	cameraPositionZ: MotionValue<number>;
+}) {
+	const { camera } = useThree();
+
+	useFrame(() => {
+		camera.position.y = cameraPositionY.get();
+		camera.position.z = cameraPositionZ.get();
+	});
+
+	return null;
+}
+
+export default function Ring() {
+	const ref = useRef<HTMLDivElement>(null);
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ['start 50%', 'end 50%'],
+	});
+
+	const { width } = useTailwindBreakpoints();
+
+	const cameraPositions = useMemo(() => {
+		if (width < 768) {
+			return {
+				y: [4, -1.8, -1.8],
+				z: [20, 20, -3],
+			};
+		}
+
+		return {
+			y: [-2.5, -1.8, -1.8],
+			z: [7, 7, -3],
+		};
+	}, [width]);
+
+	const rotationYValues = useMemo(() => {
+		if (width < 768) {
+			return [-1.5, Math.PI];
+		}
+
+		return [0, Math.PI];
+	}, [width]);
+
+	const cameraPositionY = useTransform(
+		scrollYProgress,
+		[0, 0.2, 1],
+		cameraPositions.y,
+	);
+
+	const cameraPositionZ = useTransform(
+		scrollYProgress,
+		[0, 0.5, 1],
+		cameraPositions.z,
+	);
+
+	const rotationY = useTransform(scrollYProgress, [0, 0.5], rotationYValues);
+
+	const verseTranslateY = useTransform(
+		scrollYProgress,
+		[0, 0.35, 0.9],
+		['20%', '20%', '0%'],
+	);
+	const verseScale = useTransform(scrollYProgress, [0, 0.66, 0.8], [0, 0.8, 1]);
+
+	return (
+		<div
+			ref={ref}
+			className='pointer-events-none relative isolate h-[300vh] w-full'
+		>
+			<div className='pointer-events-none sticky top-0 left-0 z-10 -mt-[100vh] h-screen w-full md:-mt-[30vh]'>
+				<Canvas style={{ pointerEvents: 'none' }}>
+					<Environment preset='studio' />
+					<PerspectiveCamera makeDefault position={[0, 0, 0]} />
+					<CameraController
+						cameraPositionY={cameraPositionY}
+						cameraPositionZ={cameraPositionZ}
+					/>
+					<EngagementRing rotationY={rotationY} />
+				</Canvas>
+			</div>
+			<div className='sticky top-0 left-0 flex h-screen w-full items-center justify-center'>
+				<motion.div
+					className='relative'
+					style={{
+						translateY: verseTranslateY,
+						scale: verseScale,
+					}}
+				>
+					<Image
+						alt='Green heart'
+						height={590.23}
+						sizes='100vw'
+						src='/images/green-heart.png'
+						width={590.23}
+					/>
+					<p className='text-primary-foreground absolute top-1/2 left-1/2 w-full max-w-[21.375rem] -translate-x-1/2 -translate-y-1/2 text-center text-sm leading-[120%] tracking-[-0.02em] max-md:max-w-[12.5rem] md:text-2xl'>
+						"And of His signs is that He created for you from yourselves mates
+						that you may find tranquility in them..." <br /> - Ar-Rum:21
+					</p>
+				</motion.div>
+			</div>
+		</div>
+	);
+}

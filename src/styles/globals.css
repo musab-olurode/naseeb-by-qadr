@@ -108,6 +108,9 @@
 	* {
 		@apply border-border outline-ring/50;
 	}
+	html {
+		scroll-behavior: smooth;
+	}
 	body {
 		@apply bg-background text-foreground;
 	}
@@ -115,6 +118,6 @@
 
 @layer utilities {
 	.bg-page-pattern {
-		background-image: url('/images/page-bg.png');
+		background-image: url('/images/page-bg.webp');
 	}
 }

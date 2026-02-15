@@ -2,10 +2,11 @@ import '@/styles/globals.css';
 import Providers from '@/app/providers';
 import { cn } from '@/lib/utils';
 
+import Preloader from '@/components/common/preloader';
 import TailwindBreakpointIndicator from '@/components/common/tailwind-breakpoint-indicator';
 import { Toaster } from '@/components/ui/sonner';
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 
 // PP Neue Montreal
@@ -121,9 +122,58 @@ const fontLouizeDisplay = localFont({
 	variable: '--font-louize-display',
 });
 
+export const viewport: Viewport = {
+	width: 'device-width',
+	initialScale: 1,
+	maximumScale: 5,
+	themeColor: [
+		{ media: '(prefers-color-scheme: light)', color: '#00674E' },
+		{ media: '(prefers-color-scheme: dark)', color: '#00674E' },
+	],
+};
+
+const appUrl =
+	process.env.NEXT_PUBLIC_APP_URL ?? 'https://naseeb-by-qadr.pages.dev';
+
 export const metadata: Metadata = {
-	title: 'Nextjs and Nestjs scaffold',
-	description: 'Nextjs and Nestjs fullstack scaffold',
+	metadataBase: new URL(appUrl),
+	title: {
+		default: 'Nusaybah & Qais',
+		template: '%s | Nusaybah & Qais',
+	},
+	description:
+		'Join us in celebrating the wedding of Nusaybah and Qais. Saturday, 25 April 2026.',
+	keywords: ['wedding', 'Nusaybah', 'Qais', 'N&Q', 'invitation'],
+	authors: [{ name: 'Nusaybah & Qais' }],
+	creator: 'Nusaybah & Qais',
+	openGraph: {
+		type: 'website',
+		locale: 'en',
+		url: '/',
+		siteName: 'Nusaybah & Qais',
+		title: 'Nusaybah & Qais',
+		description:
+			'Join us in celebrating the wedding of Nusaybah and Qais. Saturday, 25 April 2026.',
+		images: [
+			{
+				url: '/images/nusaybah-and-qais.webp',
+				width: 1200,
+				height: 630,
+				alt: 'Nusaybah and Qais',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Nusaybah & Qais',
+		description:
+			'Join us in celebrating the wedding of Nusaybah and Qais. Saturday, 25 April 2026.',
+		images: ['/images/nusaybah-and-qais.webp'],
+	},
+	robots: {
+		index: true,
+		follow: true,
+	},
 };
 
 export default function RootLayout({
@@ -136,7 +186,7 @@ export default function RootLayout({
 			<body
 				suppressHydrationWarning
 				className={cn(
-					'bg-primary-foreground bg-page-pattern min-h-screen bg-cover bg-fixed bg-top bg-no-repeat font-sans antialiased',
+					'bg-primary-foreground bg-page-pattern min-h-screen overflow-hidden bg-cover bg-fixed bg-top bg-no-repeat font-sans antialiased',
 					fontSans.variable,
 					fontAphroditeSlimContextual.variable,
 					fontArabicTypesetting.variable,
@@ -144,7 +194,9 @@ export default function RootLayout({
 				)}
 			>
 				<TailwindBreakpointIndicator />
-				<Providers>{children}</Providers>
+				<Providers>
+					<Preloader>{children}</Preloader>
+				</Providers>
 				<Toaster />
 			</body>
 		</html>

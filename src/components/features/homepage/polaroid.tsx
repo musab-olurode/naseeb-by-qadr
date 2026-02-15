@@ -2,9 +2,11 @@ import React from 'react';
 
 import { cn } from '@/lib/utils';
 
+import { MotionProps } from 'motion/react';
+import * as motion from 'motion/react-client';
 import Image from 'next/image';
 
-type Props = {
+interface Props extends MotionProps {
 	image: string;
 	caption?: string;
 	classNames?: {
@@ -12,11 +14,12 @@ type Props = {
 		image?: string;
 		caption?: string;
 	};
-};
+}
 
-const Polaroid = ({ image, caption, classNames }: Props) => {
+const Polaroid = ({ image, caption, classNames, ...props }: Props) => {
 	return (
-		<div
+		<motion.div
+			{...props}
 			className={cn(
 				'absolute bg-white p-[0.4375rem] pb-[3.55375rem] [box-shadow:0px_4.55px_2.27px_0px_#00000026]',
 				classNames?.base,
@@ -40,7 +43,7 @@ const Polaroid = ({ image, caption, classNames }: Props) => {
 					{caption}
 				</p>
 			)}
-		</div>
+		</motion.div>
 	);
 };
 

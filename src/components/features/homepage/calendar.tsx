@@ -29,11 +29,11 @@ export default function Calendar() {
 	return (
 		<div className='flex w-full max-w-[43.6875rem] flex-col gap-4 rounded-lg px-6 py-5'>
 			{/* Day headers */}
-			<div className='grid grid-cols-7 gap-[3.5rem]'>
+			<div className='grid grid-cols-7 gap-7 md:gap-[3.5rem]'>
 				{DAYS.map((day) => (
 					<div
 						key={day}
-						className='text-primary text-center text-[2rem] leading-[4.5625rem] font-medium'
+						className='text-primary text-center text-lg leading-[4.5625rem] font-medium md:text-[2rem]'
 					>
 						{day}
 					</div>
@@ -44,7 +44,7 @@ export default function Calendar() {
 			<div className='bg-primary h-px w-full' />
 
 			{/* Dates grid */}
-			<div className='grid grid-cols-7 gap-x-[3.5rem] gap-y-[2.5rem]'>
+			<div className='grid grid-cols-7 gap-x-7 gap-y-5 md:gap-x-[3.5rem] md:gap-y-[2.5rem]'>
 				{grid.map((date, i) => {
 					if (date === null) {
 						return <div key={`empty-${String(i)}`} />;
@@ -57,7 +57,7 @@ export default function Calendar() {
 								className='relative flex aspect-square items-center justify-center'
 							>
 								<svg
-									className='text-primary absolute top-1/2 left-1/2 size-[6.25rem] shrink-0 -translate-x-1/2 -translate-y-1/2'
+									className='text-primary absolute top-1/2 left-1/2 size-12 shrink-0 -translate-x-1/2 -translate-y-1/2 md:size-[6.25rem]'
 									preserveAspectRatio='xMidYMid meet'
 									viewBox='0 0 100 100'
 								>
@@ -66,7 +66,7 @@ export default function Calendar() {
 										fill='currentColor'
 									/>
 								</svg>
-								<span className='text-primary-foreground absolute inset-0 flex items-center justify-center text-[1.875rem] leading-[73%]'>
+								<span className='text-primary-foreground absolute inset-0 flex items-center justify-center text-sm leading-[73%] md:text-[1.875rem]'>
 									{date}
 								</span>
 							</div>
@@ -76,7 +76,7 @@ export default function Calendar() {
 					return (
 						<div
 							key={date}
-							className='text-foreground flex aspect-square items-center justify-center text-[1.875rem] leading-[73%]'
+							className='text-foreground flex aspect-square items-center justify-center text-sm leading-[73%] md:text-[1.875rem]'
 						>
 							{date}
 						</div>

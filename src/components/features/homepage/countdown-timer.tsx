@@ -32,16 +32,16 @@ function getTimeLeft(target: Date): TimeLeft | null {
 
 function TimeUnit({ value, label }: { value: string; label: string }) {
 	return (
-		<div className='relative flex h-[12.25rem] w-[9.8125rem] flex-col overflow-hidden rounded-2xl'>
+		<div className='relative flex h-[5.375rem] w-[5.4375rem] flex-col overflow-hidden rounded-[0.55rem] lg:h-[12.25rem] lg:w-[9.8125rem] lg:rounded-2xl'>
 			{/* Split halves per Figma design */}
-			<div className='bg-primary -mb-px h-[6.125rem] w-full shrink-0 rounded-2xl' />
-			<div className='bg-primary h-[6.125rem] w-full shrink-0 rounded-2xl' />
+			<div className='bg-primary -mb-px h-[2.6875rem] w-full shrink-0 rounded-[0.55rem] lg:h-[6.125rem] lg:rounded-2xl' />
+			<div className='bg-primary h-[2.6875rem] w-full shrink-0 rounded-[0.55rem] lg:h-[6.125rem] lg:rounded-2xl' />
 			{/* Number - Louize Display 100px */}
-			<div className='text-primary-foreground font-louize-display absolute inset-x-0 top-[1.9375rem] flex justify-center text-[6.25rem] leading-[100%] tracking-[-0.02em]'>
+			<div className='text-primary-foreground font-louize-display absolute inset-x-0 top-2 flex justify-center text-5xl leading-[100%] tracking-[-0.02em] lg:top-[1.9375rem] lg:text-[6.25rem]'>
 				{value}
 			</div>
 			{/* Label - Neue Montreal 16px */}
-			<div className='text-primary-foreground absolute right-0 bottom-4 left-0 text-center text-base leading-[1.2] tracking-[-0.02em]'>
+			<div className='text-primary-foreground absolute right-0 bottom-2 left-0 text-center text-[0.55rem] leading-[1.2] tracking-[-0.02em] lg:bottom-4 lg:text-base'>
 				{label}
 			</div>
 		</div>
@@ -67,44 +67,44 @@ export default function CountdownTimer() {
 
 	if (timeLeft === null) {
 		return (
-			<div className='flex items-center gap-6'>
-				<div className='bg-primary/60 h-[12.25rem] w-[9.8125rem] animate-pulse rounded-2xl' />
-				<span className='text-primary font-louize-display text-[8rem] leading-[65%]'>
+			<div className='flex flex-col items-center lg:flex-row lg:gap-6'>
+				<div className='bg-primary/60 h-[5.375rem] w-[5.4375rem] animate-pulse rounded-[0.55rem] lg:h-[12.25rem] lg:w-[9.8125rem] lg:rounded-2xl' />
+				<span className='text-primary font-louize-display text-5xl leading-[65%] lg:text-[8rem]'>
 					:
 				</span>
-				<div className='bg-primary/60 h-[12.25rem] w-[9.8125rem] animate-pulse rounded-2xl' />
-				<span className='text-primary font-louize-display text-[8rem] leading-[65%]'>
+				<div className='bg-primary/60 h-[5.375rem] w-[5.4375rem] animate-pulse rounded-[0.55rem] lg:h-[12.25rem] lg:w-[9.8125rem] lg:rounded-2xl' />
+				<span className='text-primary font-louize-display text-5xl leading-[65%] lg:text-[8rem]'>
 					:
 				</span>
-				<div className='bg-primary/60 h-[12.25rem] w-[9.8125rem] animate-pulse rounded-2xl' />
-				<span className='text-primary font-louize-display text-[8rem] leading-[65%]'>
+				<div className='bg-primary/60 h-[5.375rem] w-[5.4375rem] animate-pulse rounded-[0.55rem] lg:h-[12.25rem] lg:w-[9.8125rem] lg:rounded-2xl' />
+				<span className='text-primary font-louize-display text-5xl leading-[65%] lg:text-[8rem]'>
 					:
 				</span>
-				<div className='bg-primary/60 h-[12.25rem] w-[9.8125rem] animate-pulse rounded-2xl' />
+				<div className='bg-primary/60 h-[5.375rem] w-[5.4375rem] animate-pulse rounded-[0.55rem] lg:h-[12.25rem] lg:w-[9.8125rem] lg:rounded-2xl' />
 			</div>
 		);
 	}
 
 	return (
-		<div className='flex flex-wrap items-center justify-center gap-6'>
+		<div className='flex flex-col items-center justify-center gap-2 lg:flex-row lg:gap-6'>
 			<TimeUnit label='Days' value={timeLeft.days.toString()} />
 			<span
 				aria-hidden
-				className='text-primary font-louize-display text-[7rem] leading-[65%] md:text-[8rem]'
+				className='text-primary font-louize-display text-5xl leading-[65%] max-lg:-translate-y-2 lg:text-[8rem]'
 			>
 				:
 			</span>
 			<TimeUnit label='Hours' value={padWithZero(timeLeft.hours)} />
 			<span
 				aria-hidden
-				className='text-primary font-louize-display text-[7rem] leading-[65%] md:text-[8rem]'
+				className='text-primary font-louize-display text-5xl leading-[65%] max-lg:-translate-y-2 lg:text-[8rem]'
 			>
 				:
 			</span>
 			<TimeUnit label='Minutes' value={padWithZero(timeLeft.minutes)} />
 			<span
 				aria-hidden
-				className='text-primary font-louize-display text-[7rem] leading-[65%] md:text-[8rem]'
+				className='text-primary font-louize-display text-5xl leading-[65%] max-lg:-translate-y-2 lg:text-[8rem]'
 			>
 				:
 			</span>

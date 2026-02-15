@@ -13,7 +13,7 @@ function ContactBlock({
 }) {
 	return (
 		<div className='flex flex-col items-center gap-2'>
-			<span className='text-center text-base leading-[1.2] text-[#232323]'>
+			<span className='text-center text-sm leading-[1.2] text-[#232323] md:text-base'>
 				{label}
 			</span>
 			<a
@@ -23,7 +23,7 @@ function ContactBlock({
 				{number}
 			</a>
 			{subLabel && (
-				<span className='text-center text-base leading-[1.2] text-[#232323]'>
+				<span className='tex-sm text-center leading-[1.2] text-[#232323] md:text-base'>
 					{subLabel}
 				</span>
 			)}
@@ -33,9 +33,9 @@ function ContactBlock({
 
 export default function Footer() {
 	return (
-		<footer className='bg-primary relative flex min-h-screen items-center justify-center overflow-hidden'>
+		<footer className='bg-primary relative h-[200vh] w-full'>
 			{/* Background image */}
-			<div className='absolute inset-0'>
+			<div className='sticky top-0 h-screen w-full'>
 				<Image
 					aria-hidden
 					fill
@@ -46,55 +46,57 @@ export default function Footer() {
 				/>
 			</div>
 
-			{/* Cream content card */}
-			<div className='relative mx-4 flex w-full max-w-[32rem] flex-col items-center overflow-visible rounded-lg bg-[#F5F1E6] px-6 pt-[3.5rem] pb-[3.875rem]'>
-				<div className='flex flex-col items-center gap-[5.5625rem]'>
-					{/* Gift Registry */}
-					<div className='flex flex-col items-center gap-8'>
-						<div className='flex flex-col items-center gap-3'>
-							<h3 className='text-primary font-louize-display text-center text-[3.125rem] leading-[0.73em] tracking-[-0.03em]'>
-								Gift Registry
+			<div className='flex h-screen w-full items-center justify-center'>
+				{/* Cream content card */}
+				<div className='relative mx-4 flex w-full max-w-[32rem] flex-col items-center overflow-visible rounded-lg bg-[#F5F1E6] px-6 pt-[3.5rem] pb-[3.875rem]'>
+					<div className='flex flex-col items-center gap-[5.5625rem]'>
+						{/* Gift Registry */}
+						<div
+							className='flex flex-col items-center gap-8'
+							id='gift-registry'
+						>
+							<div className='flex flex-col items-center gap-3'>
+								<h3 className='text-primary font-louize-display text-center text-[2.5rem] leading-[0.73em] tracking-[-0.03em] md:text-[3.125rem]'>
+									Gift Registry
+								</h3>
+								<p className='max-w-[19rem] text-center text-sm leading-[1.1] text-[#232323] md:text-base'>
+									Your presence is the real present, but if you&apos;d like to
+									extend your kindness through a gift, kindly contact
+								</p>
+							</div>
+							<div className='flex flex-row flex-wrap justify-center gap-10'>
+								<ContactBlock label='Groom' number='08114810116' />
+								<ContactBlock label='Bride' number='09075556919' />
+							</div>
+						</div>
+						{/* RSVP */}
+						<div className='flex flex-col items-center gap-8' id='rsvp'>
+							<h3 className='text-primary font-louize-display text-center text-[2.5rem] leading-[0.73em] tracking-[-0.03em] md:text-[3.125rem]'>
+								RSVP
 							</h3>
-							<p className='max-w-[19rem] text-center text-base leading-[1.1] text-[#232323]'>
-								Your presence is the real present, but if you&apos;d like to
-								extend your kindness through a gift, kindly contact
-							</p>
-						</div>
-						<div className='flex flex-row flex-wrap justify-center gap-10'>
-							<ContactBlock label='Groom' number='08114810116' />
-							<ContactBlock label='Bride' number='09075556919' />
-						</div>
-					</div>
-
-					{/* RSVP */}
-					<div className='flex flex-col items-center gap-8'>
-						<h3 className='text-primary font-louize-display text-center text-[3.125rem] leading-[0.73em] tracking-[-0.03em]'>
-							RSVP
-						</h3>
-						<div className='flex flex-row flex-wrap justify-center gap-10'>
-							<ContactBlock
-								label="Groom's Family"
-								number='08114810116'
-								subLabel='Abdullah'
-							/>
-							<ContactBlock
-								label="Bride's Family"
-								number='09075556919'
-								subLabel='Umar'
-							/>
+							<div className='flex flex-row flex-wrap justify-center gap-10'>
+								<ContactBlock
+									label="Groom's Family"
+									number='08114810116'
+									subLabel='Abdullah'
+								/>
+								<ContactBlock
+									label="Bride's Family"
+									number='09075556919'
+									subLabel='Umar'
+								/>
+							</div>
 						</div>
 					</div>
+					{/* Closing message */}
+					<p className='mt-12 max-w-[19rem] text-center text-sm leading-[1.1] text-[#232323] md:text-base'>
+						Your presence will not only honor us but also add warmth and beauty
+						to our celebration.
+					</p>
+					<p className='text-primary font-aphrodite-slim-contextual mt-[3.75rem] text-center text-[1.75rem] leading-[0.73em] tracking-[-0.02em] md:text-[2.5rem]'>
+						Jazakumullah Khairan
+					</p>
 				</div>
-
-				{/* Closing message */}
-				<p className='mt-12 max-w-[19rem] text-center text-base leading-[1.1] text-[#232323]'>
-					Your presence will not only honor us but also add warmth and beauty to
-					our celebration.
-				</p>
-
-				<p className='text-primary font-aphrodite-slim-contextual mt-[3.75rem] text-center text-[2.5rem] leading-[0.73em] tracking-[-0.02em]'>
-					Jazakumullah Khairan
-				</p>
 			</div>
 		</footer>
 	);

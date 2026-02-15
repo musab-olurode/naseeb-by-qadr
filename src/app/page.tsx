@@ -1,5 +1,14 @@
 import Footer from '@/components/common/footer';
-import Calendar from '@/components/features/homepage/calendar';
+import NavMenu from '@/components/common/nav-menu';
+import SmoothScroll from '@/components/common/smooth-scroll';
+import HeroText from '@/components/features/animation/hero-text';
+import LivestreamPlayer from '@/components/features/animation/livestream-player';
+import ParallaxBg from '@/components/features/animation/parallax-bg';
+import Ring from '@/components/features/animation/ring';
+import SaveTheDate from '@/components/features/animation/save-the-date';
+import ScrollToExplore from '@/components/features/animation/scroll-to-explore';
+import TextReveal from '@/components/features/animation/text-reveal';
+import TyingRibbon from '@/components/features/animation/tying-ribbon';
 import CountdownTimer from '@/components/features/homepage/countdown-timer';
 import Polaroid from '@/components/features/homepage/polaroid';
 import { Button } from '@/components/ui/button';
@@ -8,169 +17,158 @@ import Image from 'next/image';
 
 export default function Home() {
 	return (
-		<>
+		<SmoothScroll>
 			<header>
 				<nav className='relative flex items-center justify-between p-5'>
 					<time
-						className='bg-primary text-primary-foreground rounded-[0.375rem] px-4 py-3.5 text-lg leading-[90%]'
+						className='bg-primary text-primary-foreground rounded-[0.375rem] px-4 py-3.5 text-lg leading-[90%] max-md:hidden'
 						dateTime='2026-04-25'
 					>
 						Saturday, 25 April 2026
 					</time>
-					<span className='font-louize-display absolute left-1/2 -translate-x-1/2 text-2xl font-medium tracking-[-0.02em]'>
+					<span className='font-louize-display left-5 text-2xl font-medium tracking-[-0.02em] md:absolute md:left-1/2 md:-translate-x-1/2'>
 						N&Q
 					</span>
-					<Button className='flex size-12 items-center justify-center rounded-full px-0 py-0'>
-						<svg
-							className='size-[1.4375rem] h-[0.8125rem] shrink-0'
-							fill='none'
-							height='13'
-							viewBox='0 0 23 13'
-							width='23'
-							xmlns='http://www.w3.org/2000/svg'
-						>
-							<line stroke='currentColor' x2='23' y1='0.5' y2='0.5' />
-							<line stroke='currentColor' x2='23' y1='6.5' y2='6.5' />
-							<line stroke='currentColor' x2='23' y1='12.5' y2='12.5' />
-						</svg>
-					</Button>
+					<NavMenu />
 				</nav>
 			</header>
-			<main className=''>
-				<section className='flex min-h-[calc(100vh-5.5rem)] flex-col items-center justify-between pt-[3.8125rem]'>
-					<h1 className='font-louize-display text-primary relative h-fit w-fit text-center text-[15.5vw] leading-[73%] tracking-[-0.03em]'>
-						<span className='font-arabic-typesetting absolute top-0 left-[22%] text-[0.2em] leading-none'>
-							﷽
-						</span>
-						Nusaybah <br />
-						<span className='font-aphrodite-slim-contextual absolute bottom-0 left-[5%] h-fit text-[0.5em] leading-[73%]'>
-							&
-						</span>
-						Qais
-						<span className='font-aphrodite-slim-contextual absolute right-[2%] -bottom-1 text-[0.4em] leading-[81%] tracking-[-0.03em]'>
-							(26)
-						</span>
-					</h1>
-					<div className='flex w-full items-end justify-between p-5'>
-						<span className='text-lg leading-[120%]'>
-							Scroll down to explore
-						</span>
-						<button className='relative h-[8.25rem] w-[13.5625rem] cursor-pointer overflow-hidden rounded-[0.375rem]'>
-							<Image
-								alt='Livestream thumbnail'
-								height={132}
-								src='/images/thumbnail.png'
-								width={217}
-							/>
-							<div className='bg-primary/70 absolute inset-0 mix-blend-multiply' />
-							<div className='bg-primary/60 absolute inset-0 mix-blend-color' />
-							<svg
-								className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
-								fill='none'
-								height='56'
-								viewBox='0 0 56 56'
-								width='56'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path
-									d='M18.667 14L42.0003 28L18.667 42V14Z'
-									fill='#F5F1E6'
-									stroke='#F5F1E6'
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth='2'
-								/>
-							</svg>
-						</button>
+
+			<main>
+				<section className='relative'>
+					<div className='flex h-[calc(100vh-5.5rem)] flex-col items-center justify-between pt-[3.8125rem]'>
+						<HeroText />
+						<div className='flex w-full flex-col items-center justify-between gap-y-5 p-5 md:flex-row md:items-end'>
+							<ScrollToExplore />
+							<LivestreamPlayer />
+						</div>
 					</div>
+					<Ring />
 				</section>
 
-				<section className='flex h-screen flex-col items-center justify-center gap-y-16 text-center'>
-					<h2 className='text-primary font-louize-display text-[6.25rem] leading-[73%] tracking-[-0.03em]'>
-						Invitation
+				<section className='flex h-[30vh] flex-col items-center justify-center gap-y-8 text-center sm:h-screen sm:gap-y-16'>
+					<h2 className='text-primary font-louize-display -mb-2 text-5xl leading-[100%] tracking-[-0.03em] sm:text-[6.25rem]'>
+						<TextReveal maskLines lines={['Invitation']} />
 					</h2>
-					<div className='flex max-w-[53.1875rem] flex-col gap-y-12'>
-						<p className='text-[2.5rem] leading-[120%] tracking-[-0.02em]'>
-							With the blessing of Allah, you are cordially invited to the Aqd &
-							Walimatu Nikkahh of Nusaybah (Inumidun) & Qais (Moyosoreoluwa).
-						</p>
-						<span className='text-primary font-louize-display text-[3rem] leading-[73%] tracking-[-0.03em]'>
-							(#Naseebyqadr)
+					<div className='flex max-w-[53.1875rem] flex-col gap-y-10 sm:gap-y-12'>
+						<div className='text-lg leading-[120%] tracking-[-0.02em] sm:text-[2.5rem]'>
+							<TextReveal
+								maskLines
+								staggerCustomDelay
+								className='hidden items-center lg:flex'
+								delay={0.3}
+								lines={[
+									'With the blessing of Allah, you are cordially invited to',
+									'the Aqd & Walimatu Nikkahh of Nusaybah (Inumidun)',
+									'& Qais (Moyosoreoluwa).',
+								]}
+								staggerLines={0.12}
+							/>
+							<TextReveal
+								maskLines
+								staggerCustomDelay
+								className='items-center lg:hidden'
+								delay={0.3}
+								lines={[
+									'With the blessing of Allah, you are',
+									'cordially invited to the Aqd & Walimatu',
+									'Nikkahh of Nusaybah (Inumidun) & Qais',
+									'(Moyosoreoluwa).',
+								]}
+								staggerLines={0.12}
+							/>
+						</div>
+						<span className='text-primary font-louize-display -mt-4 text-2xl leading-[130%] tracking-[-0.03em] md:text-[3rem]'>
+							<TextReveal
+								maskLines
+								staggerCustomDelay
+								className='items-center'
+								delay={0.8}
+								lines={['(#Naseebyqadr)']}
+							/>
 						</span>
 					</div>
 				</section>
 
-				<section className='flex h-screen items-center justify-center'>
-					<div className='relative'>
-						<Image
-							alt='Green heart'
-							height={590.23}
-							sizes='100vw'
-							src='/images/green-heart.png'
-							width={590.23}
-						/>
-						<p className='text-primary-foreground absolute top-1/2 left-1/2 w-full max-w-[21.375rem] -translate-x-1/2 -translate-y-1/2 text-center text-2xl leading-[120%] tracking-[-0.02em]'>
-							"And of His signs is that He created for you from yourselves mates
-							that you may find tranquility in them..." <br /> - Ar-Rum:21
-						</p>
-					</div>
-				</section>
+				<TyingRibbon />
 
-				<section className='relative h-screen'>
-					<Image
-						fill
-						alt='Hall'
-						className='object-cover'
-						src='/images/hall.jpg'
-					/>
-				</section>
+				<ParallaxBg />
 
-				<section className='flex flex-col items-center gap-y-[4.5625rem] py-[9.125rem]'>
+				<section
+					className='flex flex-col items-center gap-y-[4.5625rem] py-[9.125rem] max-lg:pb-0'
+					id='countdown'
+				>
 					<div className='flex flex-col gap-y-6 text-center'>
-						<h3 className='text-primary font-louize-display text-[6.25rem] leading-[73%] tracking-[-0.03em]'>
-							Countdown To Forever
+						<h3 className='text-primary font-louize-display -mb-2 text-5xl leading-[100%] tracking-[-0.03em] sm:text-[6.25rem]'>
+							<TextReveal
+								maskLines
+								className='hidden lg:flex'
+								lines={['Countdown To Forever']}
+							/>
+							<TextReveal
+								maskLines
+								className='flex items-center lg:hidden'
+								lines={['Countdown', 'To Forever']}
+							/>
 						</h3>
-						<p className='text-lg leading-[120%] tracking-[-0.02em]'>
-							The celebration begins in:
-						</p>
+						<div className='text-lg leading-[120%] tracking-[-0.02em]'>
+							<TextReveal
+								maskLines
+								className='items-center'
+								delay={0.3}
+								lines={['The celebration begins in:']}
+							/>
+						</div>
 					</div>
 					<CountdownTimer />
 				</section>
 
-				<section className='flex flex-col items-center gap-y-[8.4375rem] py-[9.125rem]'>
-					<h3 className='text-primary font-aphrodite-slim-contextual text-[6.25rem] leading-[73%] tracking-[-0.02em]'>
-						April
-					</h3>
-					<div className='relative'>
-						<Polaroid
-							classNames={{
-								base: 'rotate-[-18.53deg] left-0 -translate-x-[110%] top-[32%]',
-							}}
-							image='/images/hall.jpg'
-						/>
-						<Polaroid
-							classNames={{
-								base: 'rotate-[18.32deg] right-0 translate-x-[110%] top-[23%]',
-							}}
-							image='/images/bouquet.png'
-						/>
-						<Polaroid
-							classNames={{
-								base: 'rotate-[3.45deg] left-[57%] top-[90%]',
-								image: 'w-[10.8875rem] h-[8.115rem]',
-							}}
-							image='/images/jollof.png'
-						/>
-						<Calendar />
-					</div>
-				</section>
+				<SaveTheDate />
 
-				<section className='flex flex-col items-center gap-y-[7.5rem] py-[9.875rem]'>
-					<h3 className='text-primary font-louize-display text-[6.25rem] leading-[73%] tracking-[-0.03em]'>
-						Event Details
+				<section
+					className='flex flex-col items-center gap-y-20 py-[9.875rem] max-lg:pb-0 lg:gap-y-[7.5rem]'
+					id='event-details'
+				>
+					<h3 className='text-primary font-louize-display -mb-2 text-5xl leading-[100%] tracking-[-0.03em] md:text-[6.25rem]'>
+						<TextReveal
+							maskLines
+							classNames={{ line: 'pr-1' }}
+							lines={['Event Details']}
+						/>
 					</h3>
 					<div className='relative'>
 						<svg
+							className='block lg:hidden'
+							fill='none'
+							height='730'
+							viewBox='0 0 295 730'
+							width='295'
+							xmlns='http://www.w3.org/2000/svg'
+						>
+							<path
+								d='M295 169.003C286.102 169.134 278.93 176.387 278.93 185.316C278.93 194.245 286.102 201.497 295 201.629L295 540.004C286.102 540.135 278.93 547.388 278.93 556.316C278.93 565.245 286.102 572.498 295 572.63L295 718.421C293.471 717.196 291.531 716.461 289.419 716.461C284.484 716.461 280.483 720.462 280.483 725.396C280.483 727.081 280.951 728.655 281.761 730L10.3789 730C11.1887 728.656 11.6542 727.08 11.6543 725.396C11.6543 720.462 7.65424 716.461 2.7197 716.461C1.77133 716.461 0.857543 716.61 -3.1336e-05 716.884L-2.50306e-05 572.633C9.01111 572.633 16.3163 565.328 16.3164 556.316C16.3164 547.305 9.01118 540 -2.36041e-05 540L-8.81365e-06 201.633C9.0111 201.633 16.3163 194.328 16.3164 185.316C16.3164 176.305 9.01116 169 -7.38722e-06 169L-5.92836e-07 13.5625C0.857574 13.8362 1.77136 13.9853 2.71973 13.9853C7.65427 13.9851 11.6543 9.98438 11.6543 5.04979C11.6542 3.17568 11.0769 1.43658 10.0908 -1.24538e-05L282.049 -5.66115e-07C281.062 1.43672 280.483 3.1754 280.483 5.0498C280.483 9.98451 284.484 13.9854 289.419 13.9854C291.531 13.9853 293.471 13.2507 295 12.0254L295 169.003Z'
+								fill='#00674E'
+							/>
+							<line
+								stroke='#F5F1E6'
+								strokeDasharray='6.22 6.22'
+								strokeWidth='1.55393'
+								x1='278.93'
+								x2='16.3162'
+								y1='557.093'
+								y2='557.093'
+							/>
+							<line
+								stroke='#F5F1E6'
+								strokeDasharray='6.22 6.22'
+								strokeWidth='1.55393'
+								x1='278.93'
+								x2='16.3162'
+								y1='185.777'
+								y2='185.777'
+							/>
+						</svg>
+						<svg
+							className='hidden lg:block'
 							fill='none'
 							height='380'
 							viewBox='0 0 955 380'
@@ -200,31 +198,31 @@ export default function Home() {
 								y2='359'
 							/>
 						</svg>
-						<div className='text-primary-foreground absolute top-1/2 left-1/2 flex size-full -translate-x-1/2 -translate-y-1/2 items-center justify-center'>
-							<div className='flex max-w-[9.4rem] flex-1 flex-col items-center justify-center gap-y-5'>
-								<span className='text-2xl leading-[100%] font-medium'>
+						<div className='text-primary-foreground absolute top-1/2 left-1/2 flex size-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center lg:flex-row'>
+							<div className='flex max-h-[11.5rem] max-w-[9.4rem] flex-1 flex-col items-center justify-center gap-y-5'>
+								<span className='text-lg leading-[100%] font-medium lg:text-2xl'>
 									Date
 								</span>
-								<span className='font-louize-display text-[6.25rem] leading-[73%] tracking-[-0.03em]'>
+								<span className='font-louize-display text-[4.5rem] leading-[73%] tracking-[-0.03em] lg:text-[6.25rem]'>
 									25
 								</span>
-								<span className='text-2xl leading-[100%] font-medium'>
+								<span className='text-lg leading-[100%] font-medium lg:text-2xl'>
 									Sat, April
 								</span>
 							</div>
-							<div className='flex flex-1 flex-col items-center gap-y-[0.875rem]'>
-								<span className='text-2xl leading-[100%] tracking-[-0.02em]'>
+							<div className='flex flex-1 flex-col items-center gap-y-[0.875rem] max-lg:justify-center'>
+								<span className='text-lg leading-[100%] tracking-[-0.02em] lg:text-2xl'>
 									Venue
 								</span>
-								<span className='max-w-[33.25rem] text-[2.75rem] leading-[110%] tracking-[-0.02em]'>
-									The Musical Village,Obafemi Awolowo way , ikorodu, Lagos
+								<span className='max-w-[14.8125rem] text-center text-2xl leading-[110%] tracking-[-0.02em] lg:max-w-[33.25rem] lg:text-[2.75rem]'>
+									The Musical Village, Obafemi Awolowo way, ikorodu, Lagos
 								</span>
 							</div>
-							<div className='flex max-w-[9.4rem] flex-1 flex-col items-center justify-center gap-y-5'>
-								<span className='text-2xl leading-[100%] font-medium'>
+							<div className='flex max-h-[11.5rem] max-w-[9.4rem] flex-1 flex-col items-center justify-center gap-y-5'>
+								<span className='text-lg leading-[100%] font-medium lg:text-2xl'>
 									Time
 								</span>
-								<span className='font-louize-display text-[6.25rem] leading-[73%] tracking-[-0.03em]'>
+								<span className='font-louize-display text-[4.5rem] leading-[73%] tracking-[-0.03em] lg:text-[6.25rem]'>
 									11
 								</span>
 							</div>
@@ -232,17 +230,23 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className='flex flex-col items-center gap-y-[7.5rem] py-[9.875rem]'>
-					<h3 className='text-primary font-louize-display text-[6.25rem] leading-[73%] tracking-[-0.03em]'>
-						Get Directions
-					</h3>
-					<div className='relative h-[34.25rem] w-full max-w-[57.625rem] overflow-hidden rounded-2xl'>
-						<Image
-							fill
-							alt='Map'
-							className='object-cover'
-							src='/images/map.png'
+				<section className='flex flex-col items-center gap-y-12 py-[9.875rem] lg:gap-y-[7.5rem]'>
+					<h3 className='text-primary font-louize-display -mb-2 text-5xl leading-[100%] tracking-[-0.03em] md:text-[6.25rem]'>
+						<TextReveal
+							maskLines
+							classNames={{ line: 'pr-1' }}
+							lines={['Get Directions']}
 						/>
+					</h3>
+					<div className='relative h-[34.25rem] w-full max-w-[57.625rem] max-md:px-4'>
+						<div className='relative size-full overflow-hidden rounded-2xl'>
+							<Image
+								fill
+								alt='Map'
+								className='object-cover'
+								src='/images/map.png'
+							/>
+						</div>
 						<div className='absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-y-6'>
 							<Polaroid
 								caption='Venue'
@@ -266,6 +270,6 @@ export default function Home() {
 			</main>
 
 			<Footer />
-		</>
+		</SmoothScroll>
 	);
 }
