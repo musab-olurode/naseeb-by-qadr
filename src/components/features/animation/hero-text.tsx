@@ -24,7 +24,7 @@ const HeroText = () => {
 		<h1 className='font-louize-display text-primary relative w-fit text-center text-[25vw] leading-[73%] tracking-[-0.03em] md:text-[15.5vw]'>
 			<TextReveal
 				delayUntilReady
-				className='absolute top-0 left-[22%]'
+				className='absolute top-0 left-[22%] [&_svg]:h-auto [&_svg]:w-[1.3em]'
 				delay={0.5}
 				duration={1}
 				lines={[basmallah]}
@@ -34,7 +34,7 @@ const HeroText = () => {
 				delayUntilReady
 				className='items-center'
 				lines={['Nusaybah', 'Qais']}
-			/>{' '}
+			/>
 			<TextReveal
 				delayUntilReady
 				className='font-aphrodite-slim-contextual absolute bottom-0 left-[5%] h-fit text-[0.5em] leading-[73%]'
