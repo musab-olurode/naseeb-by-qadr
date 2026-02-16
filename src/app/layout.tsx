@@ -186,13 +186,14 @@ export default function RootLayout({
 			<body
 				suppressHydrationWarning
 				className={cn(
-					'bg-primary-foreground bg-page-pattern min-h-screen overflow-x-hidden bg-cover bg-fixed bg-top bg-no-repeat font-sans antialiased',
+					'bg-primary-foreground min-h-screen overflow-x-hidden font-sans antialiased',
 					fontSans.variable,
 					fontAphroditeSlimContextual.variable,
 					fontArabicTypesetting.variable,
 					fontLouizeDisplay.variable,
 				)}
 			>
+				<div className='bg-page-pattern bg-primary-foreground fixed inset-0 -z-10 size-full bg-cover bg-fixed bg-top bg-no-repeat' />
 				<TailwindBreakpointIndicator />
 				<Providers>
 					<Preloader>{children}</Preloader>

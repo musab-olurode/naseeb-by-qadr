@@ -86,7 +86,7 @@ export default function Ring() {
 			ref={ref}
 			className='pointer-events-none relative isolate h-[300vh] w-full touch-none'
 		>
-			<div className='pointer-events-none sticky top-0 left-0 z-10 -mt-[95vh] h-screen w-full touch-none md:-mt-[30vh]'>
+			<div className='pointer-events-none sticky top-0 left-0 z-10 -mt-[110vh] h-screen w-full touch-none min-[380px]:-mt-[95vh] md:-mt-[30vh]'>
 				<Canvas
 					resize={{ scroll: false }}
 					style={{ pointerEvents: 'none', touchAction: 'none' }}

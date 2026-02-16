@@ -33,7 +33,7 @@ function ContactBlock({
 
 export default function Footer() {
 	return (
-		<footer className='bg-primary relative h-[200vh] w-full'>
+		<footer className='bg-primary relative min-h-[200vh] w-full'>
 			{/* Background image */}
 			<div className='sticky top-0 h-screen w-full'>
 				<Image
@@ -46,9 +46,9 @@ export default function Footer() {
 				/>
 			</div>
 
-			<div className='flex h-screen w-full items-center justify-center'>
+			<div className='flex min-h-screen w-full items-center justify-center'>
 				{/* Cream content card */}
-				<div className='relative mx-4 flex w-full max-w-[32rem] flex-col items-center overflow-visible bg-[#F5F1E6] px-6 pt-[3.5rem] pb-[3.875rem]'>
+				<div className='relative mx-4 flex w-full max-w-[32rem] flex-col items-center overflow-visible bg-[#F5F1E6] px-6 py-10 max-[380px]:my-4 min-[380px]:pt-[3.5rem] min-[380px]:pb-[3.875rem]'>
 					<div className='flex flex-col items-center gap-[5.5625rem]'>
 						{/* Gift Registry */}
 						<div

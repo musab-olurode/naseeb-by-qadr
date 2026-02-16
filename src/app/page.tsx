@@ -36,9 +36,9 @@ export default function Home() {
 
 			<main>
 				<section className='relative'>
-					<div className='flex h-[calc(100vh-5.5rem)] flex-col items-center justify-between pt-[3.8125rem]'>
+					<div className='flex min-h-[calc(100vh-5.5rem)] flex-col items-center justify-between pt-[3.8125rem] max-md:pb-20'>
 						<HeroText />
-						<div className='flex w-full flex-col items-center justify-between gap-y-[7.51875rem] p-5 max-md:translate-y-[85%] md:flex-row md:items-end md:gap-y-5'>
+						<div className='flex w-full translate-y-[70%] flex-col items-center justify-between gap-y-[7.51875rem] p-5 min-[380px]:translate-y-full md:translate-y-0 md:flex-row md:items-end md:gap-y-5'>
 							<ScrollToExplore />
 							<div className='flex flex-col items-center gap-y-4'>
 								<LivestreamPlayer />
