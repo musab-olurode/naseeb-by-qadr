@@ -84,10 +84,13 @@ export default function Ring() {
 	return (
 		<div
 			ref={ref}
-			className='pointer-events-none relative isolate h-[300vh] w-full'
+			className='pointer-events-none relative isolate h-[300vh] w-full touch-none'
 		>
-			<div className='pointer-events-none sticky top-0 left-0 z-10 -mt-[100vh] h-screen w-full md:-mt-[30vh]'>
-				<Canvas style={{ pointerEvents: 'none' }}>
+			<div className='pointer-events-none sticky top-0 left-0 z-10 -mt-[100vh] h-screen w-full touch-none md:-mt-[30vh]'>
+				<Canvas
+					resize={{ scroll: false }}
+					style={{ pointerEvents: 'none', touchAction: 'none' }}
+				>
 					<Environment preset='studio' />
 					<PerspectiveCamera makeDefault position={[0, 0, 0]} />
 					<CameraController
