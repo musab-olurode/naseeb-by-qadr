@@ -10,11 +10,11 @@ type Props = {
 	className?: string;
 };
 
-const ScrollToExplore = ({ className }: Props) => {
+const LivestreamComingSoon = ({ className }: Props) => {
 	return (
 		<motion.span
 			animate={{ y: '0%', opacity: 1 }}
-			className={cn('text-lg leading-[120%]', className)}
+			className={cn('text-center text-lg leading-[120%]', className)}
 			initial={{ y: '120%', opacity: 0 }}
 			transition={{
 				duration: 1,
@@ -27,9 +27,9 @@ const ScrollToExplore = ({ className }: Props) => {
 				},
 			}}
 		>
-			Scroll down to explore
+			Wedding live stream coming soon
 		</motion.span>
 	);
 };
 
-export default ScrollToExplore;
+export default LivestreamComingSoon;

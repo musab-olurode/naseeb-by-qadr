@@ -42,13 +42,13 @@ export default function Footer() {
 					alt=''
 					className='object-cover'
 					priority={false}
-					src='/images/footer-bg.png'
+					src='/images/footer-bg.webp'
 				/>
 			</div>
 
 			<div className='flex h-screen w-full items-center justify-center'>
 				{/* Cream content card */}
-				<div className='relative mx-4 flex w-full max-w-[32rem] flex-col items-center overflow-visible rounded-lg bg-[#F5F1E6] px-6 pt-[3.5rem] pb-[3.875rem]'>
+				<div className='relative mx-4 flex w-full max-w-[32rem] flex-col items-center overflow-visible bg-[#F5F1E6] px-6 pt-[3.5rem] pb-[3.875rem]'>
 					<div className='flex flex-col items-center gap-[5.5625rem]'>
 						{/* Gift Registry */}
 						<div

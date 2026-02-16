@@ -2,6 +2,7 @@ import Footer from '@/components/common/footer';
 import NavMenu from '@/components/common/nav-menu';
 import SmoothScroll from '@/components/common/smooth-scroll';
 import HeroText from '@/components/features/animation/hero-text';
+import LivestreamComingSoon from '@/components/features/animation/livestream-coming-soon';
 import LivestreamPlayer from '@/components/features/animation/livestream-player';
 import ParallaxBg from '@/components/features/animation/parallax-bg';
 import Ring from '@/components/features/animation/ring';
@@ -37,9 +38,12 @@ export default function Home() {
 				<section className='relative'>
 					<div className='flex h-[calc(100vh-5.5rem)] flex-col items-center justify-between pt-[3.8125rem]'>
 						<HeroText />
-						<div className='flex w-full flex-col items-center justify-between gap-y-5 p-5 md:flex-row md:items-end'>
+						<div className='flex w-full flex-col items-center justify-between gap-y-[7.51875rem] p-5 max-md:translate-y-[85%] md:flex-row md:items-end md:gap-y-5'>
 							<ScrollToExplore />
-							<LivestreamPlayer />
+							<div className='flex flex-col items-center gap-y-4'>
+								<LivestreamPlayer />
+								<LivestreamComingSoon />
+							</div>
 						</div>
 					</div>
 					<Ring />
@@ -254,7 +258,7 @@ export default function Home() {
 									base: ' p-[0.286875rem] pb-[2.329375rem] relative',
 									image: 'w-[9.125rem] h-[6.80125rem]',
 								}}
-								image='/images/hall.jpg'
+								image='/images/hall.webp'
 							/>
 							<Button asChild>
 								<a

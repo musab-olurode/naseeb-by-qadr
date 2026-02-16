@@ -66,7 +66,7 @@ const SaveTheDate = () => {
 						classNames={{
 							base: 'rotate-[-18.53deg] relative',
 						}}
-						image='/images/hall.jpg'
+						image='/images/hall.webp'
 					/>
 				</motion.div>
 				<motion.div
