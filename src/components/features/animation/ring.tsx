@@ -41,8 +41,15 @@ export default function Ring() {
 	const cameraPositions = useMemo(() => {
 		if (width < 768) {
 			return {
-				y: [4, -1.8, -1.8],
-				z: [20, 20, -5],
+				y: [-6, -1.8, -1.8],
+				z: [15, 10, -5],
+			};
+		}
+
+		if (width < 1024) {
+			return {
+				y: [-2, -1.8, -1.8],
+				z: [15, 10, -5],
 			};
 		}
 
@@ -54,7 +61,11 @@ export default function Ring() {
 
 	const rotationYValues = useMemo(() => {
 		if (width < 768) {
-			return [-1.5, Math.PI];
+			return [0, Math.PI];
+		}
+
+		if (width < 1024) {
+			return [0, Math.PI];
 		}
 
 		return [0, Math.PI];
@@ -84,9 +95,9 @@ export default function Ring() {
 	return (
 		<div
 			ref={ref}
-			className='pointer-events-none relative isolate h-[300vh] w-full touch-none'
+			className='pointer-events-none relative isolate -mt-[110vh] h-[300vh] w-full touch-none sm:-mt-[70vh] md:-mt-[50vh] lg:-mt-[30vh]'
 		>
-			<div className='pointer-events-none sticky top-0 left-0 z-10 -mt-[110vh] h-screen w-full touch-none min-[380px]:-mt-[95vh] md:-mt-[30vh]'>
+			<div className='pointer-events-none sticky top-0 left-0 z-10 h-screen w-full touch-none'>
 				<Canvas
 					resize={{ scroll: false }}
 					style={{ pointerEvents: 'none', touchAction: 'none' }}

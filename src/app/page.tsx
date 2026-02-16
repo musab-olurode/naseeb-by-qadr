@@ -1,5 +1,5 @@
 import Footer from '@/components/common/footer';
-import NavMenu from '@/components/common/nav-menu';
+import Nav from '@/components/common/nav';
 import SmoothScroll from '@/components/common/smooth-scroll';
 import HeroText from '@/components/features/animation/hero-text';
 import LivestreamComingSoon from '@/components/features/animation/livestream-coming-soon';
@@ -20,31 +20,23 @@ export default function Home() {
 	return (
 		<SmoothScroll>
 			<header>
-				<nav className='relative flex items-center justify-between p-5'>
-					<time
-						className='bg-primary text-primary-foreground rounded-[0.375rem] px-4 py-3.5 text-lg leading-[90%] max-md:hidden'
-						dateTime='2026-04-25'
-					>
-						Saturday, 25 April 2026
-					</time>
-					<span className='font-louize-display left-5 text-2xl font-medium tracking-[-0.02em] md:absolute md:left-1/2 md:-translate-x-1/2'>
-						N&Q
-					</span>
-					<NavMenu />
-				</nav>
+				<Nav />
 			</header>
 
 			<main>
-				<section className='relative'>
-					<div className='flex min-h-[calc(100vh-5.5rem)] flex-col items-center justify-between pt-[3.8125rem] max-md:pb-20'>
+				<section className='relative flex flex-col gap-y-[6.26875rem]'>
+					<div className='flex min-h-[calc(100vh-5.5rem)] flex-col items-center justify-between pt-[3.8125rem] max-sm:pb-5'>
 						<HeroText />
-						<div className='flex w-full translate-y-[70%] flex-col items-center justify-between gap-y-[7.51875rem] p-5 min-[380px]:translate-y-full md:translate-y-0 md:flex-row md:items-end md:gap-y-5'>
+						<div className='flex w-full flex-row items-end justify-between p-5 max-sm:justify-center max-sm:py-0'>
 							<ScrollToExplore />
-							<div className='flex flex-col items-center gap-y-4'>
+							<div className='max-sm:hidden'>
 								<LivestreamPlayer />
-								<LivestreamComingSoon className='md:hidden' />
 							</div>
 						</div>
+					</div>
+					<div className='flex flex-col items-center gap-y-4 min-sm:hidden'>
+						<LivestreamPlayer />
+						<LivestreamComingSoon />
 					</div>
 					<Ring />
 				</section>

@@ -9,7 +9,7 @@ const LivestreamPlayer = () => {
 	return (
 		<motion.button
 			animate={{ y: '0%', opacity: 1 }}
-			className='relative h-[13.65rem] w-[19.625rem] cursor-pointer overflow-hidden rounded-[0.375rem] md:h-[8.25rem] md:w-[13.5625rem]'
+			className='relative h-[13.65rem] w-[19.625rem] cursor-pointer overflow-hidden rounded-[0.375rem] sm:h-[8.25rem] sm:w-[13.5625rem]'
 			initial={{ y: '120%', opacity: 0 }}
 			transition={{
 				duration: 1,

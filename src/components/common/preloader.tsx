@@ -8,6 +8,8 @@ import React, {
 	useState,
 } from 'react';
 
+import { useScrollLock } from '@/hooks/use-scroll-lock';
+
 import PreloaderLetters from '@/components/features/animation/preloader-letters';
 import TextReveal from '@/components/features/animation/text-reveal';
 
@@ -114,17 +116,7 @@ export default function Preloader({ children }: PreloaderProps) {
 			});
 	}, [updateProgress]);
 
-	useEffect(() => {
-		if (!isReady) {
-			document.body.style.overflow = 'hidden';
-		} else {
-			document.body.style.overflow = 'auto';
-		}
-
-		return () => {
-			document.body.style.overflow = 'auto';
-		};
-	}, [isReady]);
+	useScrollLock(!isReady);
 
 	return (
 		<>

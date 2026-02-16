@@ -52,7 +52,7 @@ const SaveTheDate = () => {
 	return (
 		<section
 			ref={containerRef}
-			className='flex flex-col items-center gap-y-[17.125rem] py-[9.125rem] md:gap-y-[8.4375rem]'
+			className='flex flex-col items-center gap-y-[17.125rem] overflow-hidden py-[9.125rem] md:gap-y-[8.4375rem]'
 		>
 			<h3 className='text-primary font-aphrodite-slim-contextual -mb-2 text-[4.5rem] leading-[100%] tracking-[-0.03em] md:text-[6.25rem]'>
 				<TextReveal lines={['April']} />

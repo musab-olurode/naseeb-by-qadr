@@ -21,14 +21,14 @@ type Props = {
 	staggerLines?: number;
 	maskLines?: boolean;
 	staggerCustomDelay?: boolean;
-	/** When true, animations wait for preloader and viewport before starting */
 	delayUntilReady?: boolean;
+	viewportOnce?: boolean;
 };
 
-const TextReveal = (props: Props) => {
+const TextReveal = ({ viewportOnce = true, ...props }: Props) => {
 	const isPreloaderReady = usePreloaderReady();
 	const ref = useRef<HTMLDivElement>(null);
-	const isInView = useInView(ref, { once: true });
+	const isInView = useInView(ref, { once: viewportOnce });
 	const usePreloaderGate = Boolean(props.delayUntilReady);
 	const canAnimate = !usePreloaderGate || (isPreloaderReady && isInView);
 
@@ -93,7 +93,7 @@ const TextReveal = (props: Props) => {
 									ease: [0.22, 1, 0.36, 1],
 								},
 							}}
-							viewport={{ once: true }}
+							viewport={{ once: viewportOnce }}
 							whileInView={{ opacity: 1, y: 0 }}
 						>
 							{line}
