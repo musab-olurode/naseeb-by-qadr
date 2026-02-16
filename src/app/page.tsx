@@ -35,7 +35,9 @@ export default function Home() {
 						</div>
 					</div>
 					<div className='flex flex-col items-center gap-y-4 min-sm:hidden'>
-						<LivestreamPlayer />
+						<div className='z-10'>
+							<LivestreamPlayer />
+						</div>
 						<LivestreamComingSoon />
 					</div>
 					<Ring />
