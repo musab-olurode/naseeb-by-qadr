@@ -1,10 +1,22 @@
 'use client';
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {
+	createContext,
+	useCallback,
+	useContext,
+	useEffect,
+	useState,
+} from 'react';
 
 import * as motion from 'motion/react-client';
 
 const TOTAL_RIBBON_FRAMES = 192;
+
+export const PreloaderContext = createContext(false);
+
+export function usePreloaderReady() {
+	return useContext(PreloaderContext);
+}
 
 const getRibbonFramePath = (index: number) => {
 	const filename = `Scroll trigger sequence_${String(index).padStart(5, '0')}.png`;
@@ -125,17 +137,19 @@ export default function Preloader({ children }: PreloaderProps) {
 					</span>
 				</div>
 			</motion.div>
-			<motion.div
-				animate={{
-					opacity: isReady ? 1 : 0,
-					pointerEvents: isReady ? 'auto' : 'none',
-				}}
-				className={isReady ? '' : 'pointer-events-none'}
-				initial={false}
-				transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
-			>
-				{children}
-			</motion.div>
+			<PreloaderContext.Provider value={isReady}>
+				<motion.div
+					animate={{
+						opacity: isReady ? 1 : 0,
+						pointerEvents: isReady ? 'auto' : 'none',
+					}}
+					className={isReady ? '' : 'pointer-events-none'}
+					initial={false}
+					transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+				>
+					{children}
+				</motion.div>
+			</PreloaderContext.Provider>
 		</>
 	);
 }
