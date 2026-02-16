@@ -42,7 +42,7 @@ export default function Home() {
 							<ScrollToExplore />
 							<div className='flex flex-col items-center gap-y-4'>
 								<LivestreamPlayer />
-								<LivestreamComingSoon />
+								<LivestreamComingSoon className='md:hidden' />
 							</div>
 						</div>
 					</div>
