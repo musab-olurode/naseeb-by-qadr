@@ -25,7 +25,7 @@ export default function Home() {
 
 			<main>
 				<section className='relative flex flex-col gap-y-[6.26875rem]'>
-					<div className='flex min-h-[calc(100vh-5.5rem)] flex-col items-center justify-between pt-[3.8125rem] max-sm:pb-5'>
+					<div className='flex min-h-[calc(100dvh-5.5rem)] flex-col items-center justify-between pt-[3.8125rem] max-sm:pb-5'>
 						<HeroText />
 						<div className='flex w-full flex-row items-end justify-between p-5 max-sm:justify-center max-sm:py-0'>
 							<ScrollToExplore />
