@@ -101,7 +101,7 @@ export default function Ring() {
 						floatIntensity={2} // Up/down float intensity (default: 1)
 						floatingRange={[-0.1, 0.1]} // Range of Y-axis movement (default: [-0.1, 0.1])
 						rotationIntensity={1} // XYZ rotation intensity (default: 1)
-						speed={10} // Animation speed (default: 1)
+						speed={5} // Animation speed (default: 1)
 					>
 						<EngagementRing rotationY={rotationY} />
 					</Float>

@@ -248,7 +248,7 @@ export default function Home() {
 								fill
 								alt='Map'
 								className='object-cover'
-								src='/images/map.png'
+								src='/images/map.webp'
 							/>
 						</div>
 						<div className='absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-y-6'>

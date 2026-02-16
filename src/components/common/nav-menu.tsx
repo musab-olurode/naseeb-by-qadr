@@ -10,10 +10,6 @@ const navItems = [
 		href: '#event-details',
 	},
 	{
-		label: 'Gift Registry',
-		href: '#gift-registry',
-	},
-	{
 		label: 'RSVP',
 		href: '#rsvp',
 	},

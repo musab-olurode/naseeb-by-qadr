@@ -48,27 +48,8 @@ export default function Footer() {
 
 			<div className='flex min-h-screen w-full items-center justify-center'>
 				{/* Cream content card */}
-				<div className='relative mx-4 flex w-full max-w-[32rem] flex-col items-center overflow-visible bg-[#F5F1E6] px-6 py-10 max-[380px]:my-4 min-[380px]:pt-[3.5rem] min-[380px]:pb-[3.875rem]'>
+				<div className='relative mx-4 my-4 flex w-full max-w-[32rem] flex-col items-center gap-y-[3.75rem] overflow-visible bg-[#F5F1E6] px-6 py-10 min-[380px]:pt-[3.5rem] min-[380px]:pb-[3.875rem]'>
 					<div className='flex flex-col items-center gap-[5.5625rem]'>
-						{/* Gift Registry */}
-						<div
-							className='flex flex-col items-center gap-8'
-							id='gift-registry'
-						>
-							<div className='flex flex-col items-center gap-3'>
-								<h3 className='text-primary font-louize-display text-center text-[2.5rem] leading-[0.73em] tracking-[-0.03em] md:text-[3.125rem]'>
-									Gift Registry
-								</h3>
-								<p className='max-w-[19rem] text-center text-sm leading-[1.1] text-[#232323] md:text-base'>
-									Your presence is the real present, but if you&apos;d like to
-									extend your kindness through a gift, kindly contact
-								</p>
-							</div>
-							<div className='flex flex-row flex-wrap justify-center gap-10'>
-								<ContactBlock label='Groom' number='08114810116' />
-								<ContactBlock label='Bride' number='09075556919' />
-							</div>
-						</div>
 						{/* RSVP */}
 						<div className='flex flex-col items-center gap-8' id='rsvp'>
 							<h3 className='text-primary font-louize-display text-center text-[2.5rem] leading-[0.73em] tracking-[-0.03em] md:text-[3.125rem]'>
@@ -88,14 +69,23 @@ export default function Footer() {
 							</div>
 						</div>
 					</div>
+					<Image
+						alt='RSVP'
+						className='object-cover'
+						height={295}
+						src='/images/rsvp-img.webp'
+						width={228}
+					/>
 					{/* Closing message */}
-					<p className='mt-12 max-w-[19rem] text-center text-sm leading-[1.1] text-[#232323] md:text-base'>
-						Your presence will not only honor us but also add warmth and beauty
-						to our celebration.
-					</p>
-					<p className='text-primary font-aphrodite-slim-contextual mt-[3.75rem] text-center text-[1.75rem] leading-[0.73em] tracking-[-0.02em] md:text-[2.5rem]'>
-						Jazakumullah Khairan
-					</p>
+					<div className='flex flex-col items-center gap-y-[2.4375rem]'>
+						<p className='max-w-[19rem] text-center text-sm leading-[1.1] text-[#232323] md:text-base'>
+							Your presence will not only honor us but also add warmth and
+							beauty to our celebration.
+						</p>
+						<p className='text-primary font-aphrodite-slim-contextual text-center text-[1.75rem] leading-[0.73em] tracking-[-0.02em] md:text-[2.5rem]'>
+							Jazakumullah Khairan
+						</p>
+					</div>
 				</div>
 			</div>
 		</footer>

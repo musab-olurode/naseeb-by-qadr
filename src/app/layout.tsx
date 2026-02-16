@@ -193,7 +193,7 @@ export default function RootLayout({
 					fontLouizeDisplay.variable,
 				)}
 			>
-				<div className='bg-page-pattern bg-primary-foreground fixed inset-0 -z-10 size-full bg-cover bg-fixed bg-top bg-no-repeat' />
+				<div className='bg-page-pattern bg-primary-foreground fixed inset-0 -z-10 size-full bg-cover bg-fixed bg-top bg-no-repeat opacity-90' />
 				<TailwindBreakpointIndicator />
 				<Providers>
 					<Preloader>{children}</Preloader>
