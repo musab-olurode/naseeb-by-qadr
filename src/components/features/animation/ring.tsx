@@ -91,7 +91,7 @@ export default function Ring() {
 					resize={{ scroll: false }}
 					style={{ pointerEvents: 'none', touchAction: 'none' }}
 				>
-					<Environment preset='studio' />
+					<Environment files='/models/studio_small_03_1k.hdr' />
 					<PerspectiveCamera makeDefault position={[0, 0, 0]} />
 					<CameraController
 						cameraPositionY={cameraPositionY}
