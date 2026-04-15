@@ -86,29 +86,41 @@ export default function CountdownTimer() {
 	}
 
 	return (
-		<div className='flex flex-col items-center justify-center gap-2 lg:flex-row lg:gap-6'>
-			<TimeUnit label='Days' value={timeLeft.days.toString()} />
-			<span
-				aria-hidden
-				className='text-primary font-louize-display text-5xl leading-[65%] max-lg:-translate-y-2 lg:text-[8rem]'
-			>
-				:
-			</span>
-			<TimeUnit label='Hours' value={padWithZero(timeLeft.hours)} />
-			<span
-				aria-hidden
-				className='text-primary font-louize-display text-5xl leading-[65%] max-lg:-translate-y-2 lg:text-[8rem]'
-			>
-				:
-			</span>
-			<TimeUnit label='Minutes' value={padWithZero(timeLeft.minutes)} />
-			<span
-				aria-hidden
-				className='text-primary font-louize-display text-5xl leading-[65%] max-lg:-translate-y-2 lg:text-[8rem]'
-			>
-				:
-			</span>
-			<TimeUnit label='Seconds' value={padWithZero(timeLeft.seconds)} />
+		<div className='relative'>
+			<div className='absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2'>
+				<div className='flex flex-col items-center gap-y-[1.1875rem]'>
+					<p className='font-louize-display text-primary -ml-5 text-[12.5rem] leading-none tracking-[-0.03em]'>
+						{timeLeft.days + 1}
+					</p>
+					<p className='text-primary-foreground bg-primary w-full max-w-[10.0625rem] p-3 text-center text-lg tracking-[-0.02em]'>
+						Days Left
+					</p>
+				</div>
+			</div>
+			<div className='pointer-events-none flex scale-125 flex-col items-center justify-center gap-2 opacity-15 lg:flex-row lg:gap-6'>
+				<TimeUnit label='Days' value={timeLeft.days.toString()} />
+				<span
+					aria-hidden
+					className='text-primary font-louize-display text-5xl leading-[65%] max-lg:-translate-y-2 lg:text-[8rem]'
+				>
+					:
+				</span>
+				<TimeUnit label='Hours' value={padWithZero(timeLeft.hours)} />
+				<span
+					aria-hidden
+					className='text-primary font-louize-display text-5xl leading-[65%] max-lg:-translate-y-2 lg:text-[8rem]'
+				>
+					:
+				</span>
+				<TimeUnit label='Minutes' value={padWithZero(timeLeft.minutes)} />
+				<span
+					aria-hidden
+					className='text-primary font-louize-display text-5xl leading-[65%] max-lg:-translate-y-2 lg:text-[8rem]'
+				>
+					:
+				</span>
+				<TimeUnit label='Seconds' value={padWithZero(timeLeft.seconds)} />
+			</div>
 		</div>
 	);
 }
