@@ -101,8 +101,8 @@ export default function CountdownTimer() {
 		<div ref={containerRef} className='relative lg:pt-5'>
 			<div className='absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 max-lg:-mt-4'>
 				<div className='flex flex-col items-center gap-y-[1.1875rem]'>
-					<p className='font-louize-display text-primary -ml-5 text-[12.5rem] leading-none tracking-[-0.03em]'>
-						{timeLeft.days + 1}
+					<p className='font-louize-display text-primary text-[12.5rem] leading-none tracking-[-0.03em]'>
+						{timeLeft.days}
 					</p>
 					<p className='text-primary-foreground bg-primary w-full max-w-[10.0625rem] p-3 text-center text-lg tracking-[-0.02em]'>
 						Days Left

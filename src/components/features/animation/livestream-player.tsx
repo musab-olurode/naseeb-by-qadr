@@ -7,10 +7,13 @@ import Image from 'next/image';
 
 const LivestreamPlayer = () => {
 	return (
-		<motion.button
+		<motion.a
 			animate={{ y: '0%', opacity: 1 }}
-			className='relative h-[13.65rem] w-[19.625rem] cursor-pointer overflow-hidden rounded-[0.375rem] sm:h-[8.25rem] sm:w-[13.5625rem]'
+			className='relative inline-block h-[13.65rem] w-[19.625rem] cursor-pointer overflow-hidden rounded-[0.375rem] sm:h-[8.25rem] sm:w-[13.5625rem]'
+			href='https://meet.google.com/uzv-ozwb-iqp'
 			initial={{ y: '120%', opacity: 0 }}
+			rel='noopener noreferrer'
+			target='_blank'
 			transition={{
 				duration: 1,
 				delay: 0.5,
@@ -47,7 +50,7 @@ const LivestreamPlayer = () => {
 					strokeWidth='2'
 				/>
 			</svg>
-		</motion.button>
+		</motion.a>
 	);
 };
 

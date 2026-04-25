@@ -27,7 +27,7 @@ const LivestreamComingSoon = ({ className }: Props) => {
 				},
 			}}
 		>
-			Wedding live stream coming soon
+			Wedding live stream available
 		</motion.span>
 	);
 };
